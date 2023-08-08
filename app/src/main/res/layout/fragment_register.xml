@@ -73,7 +73,7 @@
             style="@style/editText"
             android:hint="Last Name"
             android:inputType="textPersonName"
-            android:layout_marginTop="50dp"/>
+            android:layout_marginTop="23dp"/>
 
         <EditText
             android:id="@+id/edEmail"
@@ -103,7 +103,7 @@
             android:layout_height="wrap_content"
             style="@style/h2"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
-            app:layout_constraintTop_toBottomOf="@id/edEmail"
+            app:layout_constraintTop_toBottomOf="@id/edPassword"
             android:textAlignment="center"
             android:gravity="center"
             android:text="Forgot password"
@@ -114,7 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
-            app:layout_constraintTop_toBottomOf="@id/buttonLoginLogin"
+            app:layout_constraintTop_toBottomOf="@id/buttonRegisterRegister"
             android:src="@drawable/facebook_login"/>
         <TextView
             android:layout_width="wrap_content"
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
             app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
-            app:layout_constraintTop_toBottomOf="@id/buttonLoginLogin"
+            app:layout_constraintTop_toBottomOf="@id/buttonRegisterRegister"
             android:src="@drawable/google_login"/>
         <TextView
             android:layout_width="wrap_content"
@@ -141,8 +141,8 @@
             app:layout_constraintBottom_toBottomOf="@id/googleLogin"
             app:layout_constraintEnd_toEndOf="@id/googleLogin"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonLoginLogin"
+        <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/buttonRegisterRegister"
             style="@style/blueButtonStyle"
             android:layout_width="0dp"
             android:layout_height="@dimen/mediumButtonHeight"
@@ -152,7 +152,12 @@
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
             app:layout_constraintTop_toBottomOf="@id/tvForgotPasswordLogin"
             android:layout_marginTop="15dp"
-            />
+            app:spinning_bar_color="@color/white"
+            >
+
+        </com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton>
+
+
 
 
         <androidx.constraintlayout.widget.Guideline
