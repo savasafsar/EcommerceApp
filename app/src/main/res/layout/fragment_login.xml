@@ -53,7 +53,7 @@
             android:layout_marginTop="5dp" />
 
         <EditText
-            android:id="@+id/edFirstName"
+            android:id="@+id/edEmail"
             android:layout_width="0dp"
             android:layout_height="@dimen/edittextHeight"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
@@ -69,7 +69,7 @@
             android:layout_height="@dimen/edittextHeight"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
             app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
-            app:layout_constraintTop_toBottomOf="@id/edFirstName"
+            app:layout_constraintTop_toBottomOf="@id/edEmail"
             style="@style/editText"
             android:hint="password"
             android:inputType="textPassword"
@@ -118,12 +118,12 @@
             app:layout_constraintBottom_toBottomOf="@id/googleLogin"
             app:layout_constraintEnd_toEndOf="@id/googleLogin"/>
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/buttonLoginLogin"
             style="@style/blueButtonStyle"
             android:layout_width="0dp"
             android:layout_height="@dimen/mediumButtonHeight"
-            android:text="Register"
+            android:text="Login"
             app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
             app:layout_constraintHorizontal_bias="0.322"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
