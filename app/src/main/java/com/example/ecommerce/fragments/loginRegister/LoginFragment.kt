@@ -13,8 +13,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.ecommerce.R
 import com.example.ecommerce.activities.ShoppingActivity
 import com.example.ecommerce.databinding.FragmentLoginBinding
+import com.example.ecommerce.dialog.setupBottomSheetDialog
 import com.example.ecommerce.util.Resource
 import com.example.ecommerce.viewmodel.LoginViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -43,7 +45,34 @@ private val viewModel by viewModels<LoginViewModel>()
             buttonLoginLogin.setOnClickListener {
                 val email = edEmail.text.toString().trim()
                 val password = edPasswordLogin.text.toString()
+                if (email.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(requireContext(), "Please enter both email and password", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
                 viewModel.login(email, password)
+            }
+        }
+        binding.tvForgotPasswordLogin.setOnClickListener {
+            setupBottomSheetDialog {email->
+                viewModel.resetPassword(email)
+            }
+        }
+        lifecycleScope.launchWhenStarted {
+            viewModel.resetPassword.collect{
+                when(it) {
+                    is Resource.Loading->{
+
+                    }
+                    is Resource.Success -> {
+                        Snackbar.make(requireView(),"Reset link was sent to your E-mail",Snackbar.LENGTH_LONG).show()
+
+                    }
+                    is Resource.Error -> {
+                        Snackbar.make(requireView(),"Error ${it.message}",Snackbar.LENGTH_LONG).show()
+                    }
+                    else -> Unit
+
+                }
             }
         }
         lifecycleScope.launchWhenStarted {
