@@ -23,6 +23,21 @@ class MainCategoryViewModel @Inject constructor(
     fun fetchSpecialProducts() {
         viewModelScope.launch {
             _specialProducts.emit(Resource.Loading())
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
+            println("mükemmel")
         }
         firestore.collection("Products")
             .whereEqualTo("category","Special Products").get()
