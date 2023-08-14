@@ -111,6 +111,9 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         binding.nestedScrollMainCategory.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener{v,_,scrollY,_,_->
             if (v.getChildAt(0).bottom<=v.height+scrollY){
                 viewModel.fetchBestProducts()
+                println("sddd")
+                println("sddd")
+                println("sddd")
             }
         })
 
