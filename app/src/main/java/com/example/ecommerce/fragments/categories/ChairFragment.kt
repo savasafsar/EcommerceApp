@@ -49,6 +49,11 @@ class ChairFragment : BaseCategoryFragment() {
                         bestProductsAdapter.differ.submitList(it.data)
                     }
                     is Resource.Error ->{
+                        println("Hata")
+                        println("Hata")
+                        println("Hata")
+
+
                         Snackbar.make(requireView(),it.message.toString(),Snackbar.LENGTH_LONG).show()
                     }
                     else ->Unit
