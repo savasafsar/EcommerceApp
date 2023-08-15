@@ -88,6 +88,8 @@ dependencies {
 
     implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
 
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
 
 }
 
