@@ -116,6 +116,7 @@ class CardFragment : Fragment(R.layout.fragment_card) {
             rvCart.visibility = View.VISIBLE
             totalBoxContainer.visibility = View.VISIBLE
             buttonCheckout.visibility = View.INVISIBLE
+            println("s")
         }
     }
 
