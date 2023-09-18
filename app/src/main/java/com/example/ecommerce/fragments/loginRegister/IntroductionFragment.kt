@@ -36,8 +36,10 @@ class IntroductionFragment : Fragment(R.layout.fragment_introdcution){
             viewModel.navigate.collect {
                 when (it) {
                     SHOPPING_ACTIVITY -> {
-                        Intent(requireActivity(), ShoppingActivity::class.java).also {
-                            it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                        Intent(requireActivity(), ShoppingActivity::class.java)
+                            .also {
+                            it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                    or Intent.FLAG_ACTIVITY_NEW_TASK)
                             startActivity(it)
                         }
                     }

@@ -41,6 +41,11 @@ private val viewModel by viewModels<LoginViewModel>()
         binding.tvDontHaveAcoount.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
+        binding.tvForgotPasswordLogin.setOnClickListener {
+            setupBottomSheetDialog { email->
+
+            }
+        }
         binding.apply {
             buttonLoginLogin.setOnClickListener {
                 val email = edEmail.text.toString().trim()
