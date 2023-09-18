@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/shopping_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/adressFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -36,7 +36,11 @@
         android:id="@+id/profileFragment"
         android:name="com.example.ecommerce.fragments.shopping.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_adressFragment"
+            app:destination="@id/adressFragment" />
+    </fragment>
     <fragment
         android:id="@+id/productDetailsFragment"
         android:name="com.example.ecommerce.fragments.shopping.ProductDetailsFragment"
@@ -46,4 +50,9 @@
             android:name="product"
             app:argType="com.example.ecommerce.data.Product" />
     </fragment>
+    <fragment
+        android:id="@+id/adressFragment"
+        android:name="com.example.ecommerce.fragments.shopping.AdressFragment"
+        android:label="AdressFragment"
+        tools:layout="@layout/fargment_address"/>
 </navigation>
