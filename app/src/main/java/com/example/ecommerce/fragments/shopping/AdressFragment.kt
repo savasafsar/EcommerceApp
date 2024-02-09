@@ -35,7 +35,8 @@ class AdressFragment:Fragment() {
                     findNavController().navigateUp()
                 }
                 is Resource.Error -> {
-                    Toast.makeText(requireContext(),it.message,Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext()
+                        ,it.message,Toast.LENGTH_SHORT).show()
                 }
                 else -> Unit
             }
