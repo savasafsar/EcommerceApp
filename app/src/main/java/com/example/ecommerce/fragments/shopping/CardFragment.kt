@@ -41,10 +41,11 @@ class CardFragment : Fragment(R.layout.fragment_card) {
 
 
         setupCartRv()
-
+        var totalPrice = 0f
         lifecycleScope.launchWhenStarted {
             viewModel.productsPrice.collectLatest { price->
                 price?.let {
+                    totalPrice = it
                     binding.tvTotalPrice.text = "$ $price"
                 }
             }
@@ -59,6 +60,10 @@ class CardFragment : Fragment(R.layout.fragment_card) {
         }
         cartAdapter.onMinusClick = {
             viewModel.changeQuantity(it,FirebaseCommon.QuantityChanging.DECREASE)
+        }
+        binding.buttonCheckout.setOnClickListener {
+           val action = CardFragmentDirections.actionCardFragmentToBillingFragment(totalPrice,cartAdapter.differ.currentList.toTypedArray())
+            findNavController().navigate(action)
         }
 
         lifecycleScope.launchWhenStarted {
@@ -115,7 +120,8 @@ class CardFragment : Fragment(R.layout.fragment_card) {
         binding.apply {
             rvCart.visibility = View.VISIBLE
             totalBoxContainer.visibility = View.VISIBLE
-            buttonCheckout.visibility = View.INVISIBLE
+            buttonCheckout.visibility = View.VISIBLE
+            println("s")
         }
     }
 

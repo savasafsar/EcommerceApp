@@ -51,7 +51,8 @@ class AccessoryFragment: BaseCategoryFragment() {
                         println("Hata")
                         println("Hata")
                         println("Hata")
-
+                        println("Hata")
+                        println("Hata")
 
                         Snackbar.make(requireView(),it.message.toString(), Snackbar.LENGTH_LONG).show()
                     }
